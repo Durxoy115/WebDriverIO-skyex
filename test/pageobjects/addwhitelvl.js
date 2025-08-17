@@ -73,7 +73,7 @@ class WhiteLvl extends Page {
     // // Type into the input
     // await signupUrl.setValue("https://zayglobalsolutions.com/signup");
 
-    // const clickOnCreateBtn = await $('//*[text()="Create"]');
+    // const clickOnCreateBtn = 
     // await clickOnCreateBtn.waitForDisplayed({ timeout: 10000 });
 
     // // Click "Admin Setting"

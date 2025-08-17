@@ -63,7 +63,8 @@ class BalanceTransfer extends Page {
     const submitWithdrawBtn = await $('//*[text()="Confirm"]');
     await submitWithdrawBtn.click();
     // Wait for confirmation message for withdrawal
-    const withdrawalConfirmationMessage = await $('//*[text()="Amount Withdraw Successfully"]');
+    const withdrawalConfirmationMessage = await $('//*[text()="Amount Transfer Successfully"]');
+    await browser.pause(10000);
   }
 }
 export default new BalanceTransfer();

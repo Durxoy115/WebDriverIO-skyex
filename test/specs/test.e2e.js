@@ -1,6 +1,7 @@
 import LoginPage from '../pageobjects/login.page.js'
 import WhiteLvl from '../pageobjects/addwhitelvl.js'
 import BalanceTransfer from '../pageobjects/balancetransfer.js'
+import UserStatusChange from '../pageobjects/userStatusChange.js'
 
 describe('My Login application', () => {
     it('should login with valid credentials', async () => {
@@ -30,3 +31,12 @@ describe('Deposit Balance', () => {
         
     })
 })
+
+describe('Change User Status', () => {
+    it('should change user status', async () => {
+        await UserStatusChange.open()
+        await UserStatusChange.changeUserStatus()
+        
+        
+    })
+}   )
