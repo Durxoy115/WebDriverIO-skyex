@@ -1,42 +1,43 @@
-import LoginPage from '../pageobjects/login.page.js'
-import WhiteLvl from '../pageobjects/addwhitelvl.js'
-import BalanceTransfer from '../pageobjects/balancetransfer.js'
-import UserStatusChange from '../pageobjects/userStatusChange.js'
+import LoginPage from "../pageobjects/login.page.js";
+import WhiteLvl from "../pageobjects/addwhitelvl.js";
+import BalanceTransfer from "../pageobjects/balancetransfer.js";
+import UserStatusChange from "../pageobjects/userStatusChange.js";
+import AddManu from "../pageobjects/addManu.js";
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open()
+describe("My Login application", () => {
+  it("should login with valid credentials", async () => {
+    await LoginPage.open();
 
-        await LoginPage.login('mvp1', '12345678')
-        
-        
-    })
-})
+    await LoginPage.login("mvp1", "12345678");
+  });
+});
 // describe('Add a white lvl', () => {
 //     it('should add a wl', async () => {
 //         await WhiteLvl.open()
 
 //         await WhiteLvl.addWhiteLvl()
-        
-        
+
 //     })
 // })
 
-describe('Deposit Balance', () => {
-    it('should deposit amount', async () => {
-        await BalanceTransfer.open()
+describe("Deposit Balance", () => {
+  it("should deposit amount", async () => {
+    await BalanceTransfer.open();
 
-        await BalanceTransfer.transferBalance()
-        
-        
-    })
-})
+    await BalanceTransfer.transferBalance();
+  });
+});
 
-describe('Change User Status', () => {
-    it('should change user status', async () => {
-        await UserStatusChange.open()
-        await UserStatusChange.changeUserStatus()
-        
-        
-    })
-}   )
+describe("Change User Status", () => {
+  it("should change user status", async () => {
+    await UserStatusChange.open();
+    await UserStatusChange.changeUserStatus();
+  });
+});
+describe("Add Manu", () => {
+  it("should add manu", async () => {
+    await AddManu.open();
+    await AddManu.addManu();
+  });
+});
+
