@@ -18,7 +18,7 @@ class AddManu extends page {
     await domainListBtn.click();
 
     // Wait for the "Add Manu" button to be visible
-    const addManuBtn = await $('//img[@alt="add_menu_bar"]');
+    const addManuBtn = await $('(//img[@alt="add_menu_bar"])[1]');
     await addManuBtn.waitForDisplayed({ timeout: 10000 });
 
     // Click the "Add Manu" button
@@ -31,12 +31,12 @@ class AddManu extends page {
     // Type into the input
     await manuInput.setValue("New");
 
-
-    //upload menu image
-    const manuImageInput = await $('//input[@name="image"]');
-    await manuImageInput.waitForDisplayed({ timeout: 5000 });
-    // Set the value for the image input
-    await manuImageInput.setValue('/Mac_ssd/Users/Durjoy/Desktop/ss/menu.png'); 
+    await browser.pause(15000);
+    // //upload menu image
+    // const manuImageInput = await $('//input[@name="thumbnail"]');
+    // await manuImageInput.waitForDisplayed({ timeout: 5000 });
+    // // Set the value for the image input
+    // await manuImageInput.setValue('/Mac_ssd/Users/Durjoy/Desktop/ss/menu.png'); 
     // Wait for the input field to be visible
 
     const altTextInput = await $('//input[@name="alt_text"]');
@@ -53,3 +53,4 @@ class AddManu extends page {
     await browser.pause(5000);
   }
 }
+export default new AddManu();

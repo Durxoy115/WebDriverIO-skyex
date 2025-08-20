@@ -1,8 +1,6 @@
-import Page from "./page";
-
-class AddSocialConnection extends Page {
-  async addSocialConnection() {
-    // Wait until "Admin Setting" is visible
+import page from "./page";
+class AddExposure extends page {
+  async addExposure() {
     const adminSettingBtn = await $('//*[text()="Admin Setting"]');
     await adminSettingBtn.waitForDisplayed({ timeout: 10000 });
 
@@ -18,29 +16,31 @@ class AddSocialConnection extends Page {
     await domainListBtn.click();
 
     // Wait for the "Add Manu" button to be visible
-    const addManuBtn = await $('(//img[@alt="add_social_connection"])[1]');
+    const addManuBtn = await $('(//img[@alt="add_exposure"])[1]');
     await addManuBtn.waitForDisplayed({ timeout: 10000 });
 
     // Click the "Add Manu" button
     await addManuBtn.click();
 
     // Wait for the input field to be visible
-    const manuInput = await $('//input[@name="resource"]');
+    const manuInput = await $('//input[@name="exposure_limit"]');
     await manuInput.waitForDisplayed({ timeout: 5000 });
 
     // Type into the input
     await manuInput.setValue("New");
-    // Wait for the "Add Social Connection" button to be visible
-    const addSocialBtn = await $('//select[@name="social_prefix_id"]');
-    await addSocialBtn.waitForDisplayed({ timeout: 10000 });
 
-    // Click the "Add Social Connection" button
-    await addSocialBtn.click();
+    const commissionCharge = await $('//input[@name="commission_charge"]');
+    await commissionCharge.waitForDisplayed({ timeout: 5000 });
 
-    // Wait for the input field to be visible
-    const socialInput = await $('//option[@value="2" and text()="Whatsapp 3"]');
-    await socialInput.waitForDisplayed({ timeout: 5000 });
-    await socialInput.click();
+    // Type into the input
+    await commissionCharge.setValue("12");
+
+    //password input
+    const passwordInput = await $('//input[@name="request_password"]');
+    await passwordInput.waitForDisplayed({ timeout: 5000 });
+    // Type into the input
+    await passwordInput.setValue("12345678");
+
 
     // Click the submit button
     const submitBtn = await $('//button[text()="Create"]');
@@ -49,4 +49,4 @@ class AddSocialConnection extends Page {
     await browser.pause(5000);
   }
 }
-export default new AddSocialConnection();
+export default new AddExposure();
